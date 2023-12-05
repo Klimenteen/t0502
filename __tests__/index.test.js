@@ -1,6 +1,5 @@
 import test from 'node:test';
 import assert from 'assert/strict';
-
 import isHappyTicket from '../index.js';
 
 test('is happy ticket', () => {
