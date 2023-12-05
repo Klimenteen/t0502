@@ -9,7 +9,7 @@
             "comparison": "included",
             "timeout": 10,
             "points": 1
-        }
+        },
         {
             "name": "step2",
             "setup": "npm install",
