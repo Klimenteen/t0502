@@ -1,17 +1,26 @@
 ---
-name: За древних русов!
 
-on: push
-
-jobs:
-  testing:
-    runs-on: ubuntu-latest
-    if: github.actor != 'Bot'
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: "npm"
-      - name: Ура работает! Работает же?
-        run: npm run test
+  name: GitHub Classroom Workflow
+  
+  on:
+    push:
+      branches:
+        - main
+  
+  permissions:
+    checks: write
+    actions: read
+    contents: read
+  
+  jobs:
+    build:
+      name: Autograding
+      runs-on: self-hosted
+      if: github.actor != 'Bot'
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 20
+            cache: 'npm'
+        - uses: education/autograding@v1
