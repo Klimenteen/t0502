@@ -1,16 +1,11 @@
 import test from 'node:test';
 import assert from 'assert/strict';
-import * as func from '../index.js';
+import * as funcs from '../index.js';
 
-test('is happy ticket', () => {
-    // assert.strictEqual(func.isHappyTicket('060006'), true);
-    // assert.strictEqual(func.isHappyTicket('123321'), true);
-    // assert.strictEqual(func.isHappyTicket('341800'), true);
-    // assert.strictEqual(func.isHappyTicket('812146'), true);
+test('step1', () => {
+    assert.strictEqual(funcs.one('060006'), 1);
 });
 
-test('is not happy ticket', () => {
-    // assert.strictEqual(func.isHappyTicket('000001'), false);
-    // assert.strictEqual(func.isHappyTicket('123567'), false);
-    // assert.strictEqual(func.isHappyTicket('213612'), false);
+test('step2', () => {
+    assert.strictEqual(funcs.two('060006'), 2);
 });
